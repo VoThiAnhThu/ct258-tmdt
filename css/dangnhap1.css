@@ -1,0 +1,46 @@
+.dangnhap-container {
+    margin: 70px 0px;
+    height: 400px;
+    background-color:antiquewhite;
+    color:palevioletred;
+}
+
+.dangnhap-title {
+    margin: 20px;
+    font-size: 36px;
+} 
+
+
+
+.frmDangNhap{
+    font-size: 22px;
+}
+.form-group {
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+.frmDangNhap-label{
+    margin-bottom: 5px;
+}
+
+.frmDangNhap-input{
+
+}
+
+.btnDangNhap {
+    margin-top: 30px;
+    background-color:palevioletred;
+    color: antiquewhite;
+    border-radius: 10px;
+}
+
+.btnDangNhap:hover {
+    opacity: 0.8;
+}
+
+.dangnhap-link{
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+}

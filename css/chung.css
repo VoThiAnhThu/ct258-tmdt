@@ -1,0 +1,54 @@
+.navbar {
+    height: 75px;
+    background: palevioletred;
+    padding: 0px 35px;
+}
+
+
+
+.navbar-brand {
+    color: antiquewhite;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: antiquewhite;
+    opacity: 0.6;
+}
+.navbar-nav {
+
+}
+
+.nav-link {
+    color: antiquewhite;
+    font-size: 16px;
+    font-weight: 400;
+}
+.nav-name {
+    font-size: 18px;
+    margin: 8px;
+    color: antiquewhite;
+}
+
+.frmSearch {
+    position: relative;
+}
+
+.frm-input {
+    width: 270px;
+    margin: 0px 20px;
+}
+
+.btnSearch {
+    background-color: #fff;
+    color: palevioletred;
+    border-color: #ddd;
+}
+.btnSearch:hover {
+    opacity: 0.7;
+    background-color: #fff;
+    color: palevioletred;
+    border-color: #ddd;
+}

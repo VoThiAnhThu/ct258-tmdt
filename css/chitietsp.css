@@ -1,0 +1,32 @@
+.img_sp {
+    position: relative;
+    width: 84%;
+    height: 80%;
+    margin: 33px;
+}
+
+.frmSanPham{
+    margin: 30px 0px;
+}
+
+.sp-drs {
+    margin: 8px 0px; 
+}
+
+.gia-tien {
+    font-size: 39px;
+    color: red;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.sp-sl {
+    width: 20%;
+}
+
+.nut-datmua {
+    background-color: palevioletred;
+    color: antiquewhite;
+    border: 1px solid ;
+    padding: 10px 6px;
+} 

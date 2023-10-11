@@ -1,0 +1,28 @@
+footer {
+    height: 100px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    background-color:#050f20f5 ;
+
+}
+
+.footer-item{
+    
+}
+
+.footer-title {
+    color: #c9c907;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-icon {
+    color: #c9c907;
+    font-size: 20px;
+    padding: 3px;
+}
+
+.footer-icon:hover {
+    opacity: 0.8;
+}

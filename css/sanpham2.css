@@ -1,0 +1,37 @@
+.sp-container {
+    margin: 20px;
+}
+
+.sp-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 15px 0px 25px;
+}
+
+.lsp-content {
+border-right: 1px solid #000 
+}
+
+.lsp-list {
+    font-size: 20px;
+    padding: 4px 0px;
+}
+
+.lsp-item{
+    color: black;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.lsp-item:hover{
+    color: gray;
+}
+
+.sp-item {
+    height: 550px;
+    margin: 10px;
+}
+.card-img-top {
+    min-height: 190px;
+    max-height: 250px;
+}
