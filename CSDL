@@ -1,0 +1,135 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.4.27-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.5.0.6677
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Dumping database structure for bookstore
+CREATE DATABASE IF NOT EXISTS `bookstore` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+USE `bookstore`;
+
+-- Dumping structure for table bookstore.donhang
+CREATE TABLE IF NOT EXISTS `donhang` (
+  `dh_ma` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `dh_ngaylap` date DEFAULT NULL,
+  `dh_ngaygiao` date DEFAULT NULL,
+  `dh_noigiao` varchar(50) DEFAULT NULL,
+  `dh_trangthaithanhtoan` int(11) DEFAULT NULL,
+  `httt_ma` int(10) unsigned DEFAULT NULL,
+  `kh_tendangnhap` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`dh_ma`),
+  KEY `FK_dondathang_hinhthucthanhtoan` (`httt_ma`),
+  KEY `FK_dondathang_khachhang` (`kh_tendangnhap`),
+  CONSTRAINT `FK_dondathang_hinhthucthanhtoan` FOREIGN KEY (`httt_ma`) REFERENCES `hinhthucthanhtoan` (`httt_ma`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_dondathang_khachhang` FOREIGN KEY (`kh_tendangnhap`) REFERENCES `khachhang` (`kh_tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table bookstore.hinhsanpham
+CREATE TABLE IF NOT EXISTS `hinhsanpham` (
+  `hsp_ma` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `hsp_tentaptin` varchar(50) DEFAULT NULL,
+  `sp_ma` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`hsp_ma`),
+  KEY `FK_hinhsanpham_sanpham` (`sp_ma`),
+  CONSTRAINT `FK_hinhsanpham_sanpham` FOREIGN KEY (`sp_ma`) REFERENCES `sanpham` (`sp_ma`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table bookstore.hinhthucthanhtoan
+CREATE TABLE IF NOT EXISTS `hinhthucthanhtoan` (
+  `httt_ma` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `httt_ten` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`httt_ma`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table bookstore.khachhang
+CREATE TABLE IF NOT EXISTS `khachhang` (
+  `kh_tendangnhap` varchar(50) NOT NULL,
+  `kh_matkhau` varchar(50) DEFAULT NULL,
+  `kh_ten` varchar(50) DEFAULT NULL,
+  `kh_diachi` varchar(50) DEFAULT NULL,
+  `kh_dienthoai` varchar(50) DEFAULT NULL,
+  `kh_email` varchar(50) DEFAULT NULL,
+  `kh_cmnd` varchar(50) DEFAULT NULL,
+  `kh_makichhoat` int(11) DEFAULT NULL,
+  `kh_trangthai` int(11) DEFAULT 1,
+  `kh_quantri` int(11) DEFAULT 0,
+  PRIMARY KEY (`kh_tendangnhap`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table bookstore.loaisanpham
+CREATE TABLE IF NOT EXISTS `loaisanpham` (
+  `lsp_ma` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `lsp_ten` varchar(50) DEFAULT NULL,
+  `lsp_mota` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`lsp_ma`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table bookstore.nhasanxuat
+CREATE TABLE IF NOT EXISTS `nhasanxuat` (
+  `nsx_ma` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nsx_ten` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`nsx_ma`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table bookstore.sanpham
+CREATE TABLE IF NOT EXISTS `sanpham` (
+  `sp_ma` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `sp_ten` varchar(50) DEFAULT NULL,
+  `sp_gia` decimal(12,2) DEFAULT NULL,
+  `sp_giacu` decimal(12,2) DEFAULT NULL,
+  `sp_mota_ngan` varchar(50) DEFAULT NULL,
+  `sp_ngaycapnhat` date DEFAULT NULL,
+  `sp_soluong` int(11) DEFAULT NULL,
+  `lsp_ma` int(10) unsigned DEFAULT NULL,
+  `nsx_ma` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`sp_ma`),
+  KEY `FK_sanpham_loaisanpham` (`lsp_ma`),
+  KEY `FK_sanpham_nhasanxuat` (`nsx_ma`),
+  CONSTRAINT `FK_sanpham_loaisanpham` FOREIGN KEY (`lsp_ma`) REFERENCES `loaisanpham` (`lsp_ma`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_sanpham_nhasanxuat` FOREIGN KEY (`nsx_ma`) REFERENCES `nhasanxuat` (`nsx_ma`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table bookstore.sanphamdondathang
+CREATE TABLE IF NOT EXISTS `sanphamdondathang` (
+  `dh_ma` int(10) unsigned NOT NULL,
+  `sp_ma` int(10) unsigned NOT NULL,
+  `sp_dh_soluong` int(11) DEFAULT NULL,
+  `sp_dh_dongia` decimal(20,6) DEFAULT NULL,
+  PRIMARY KEY (`dh_ma`,`sp_ma`),
+  KEY `FK_sanpham-dondathang_sanpham` (`sp_ma`),
+  CONSTRAINT `FK_sanpham-dondathang_dondathang` FOREIGN KEY (`dh_ma`) REFERENCES `donhang` (`dh_ma`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_sanpham-dondathang_sanpham` FOREIGN KEY (`sp_ma`) REFERENCES `sanpham` (`sp_ma`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Data exporting was unselected.
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
