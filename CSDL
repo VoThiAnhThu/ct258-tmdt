@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `donhang` (
   CONSTRAINT `FK_dondathang_khachhang` FOREIGN KEY (`kh_tendangnhap`) REFERENCES `khachhang` (`kh_tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table bookstore.donhang: ~0 rows (approximately)
 
 -- Dumping structure for table bookstore.hinhsanpham
 CREATE TABLE IF NOT EXISTS `hinhsanpham` (
@@ -47,7 +47,17 @@ CREATE TABLE IF NOT EXISTS `hinhsanpham` (
   CONSTRAINT `FK_hinhsanpham_sanpham` FOREIGN KEY (`sp_ma`) REFERENCES `sanpham` (`sp_ma`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table bookstore.hinhsanpham: ~9 rows (approximately)
+INSERT INTO `hinhsanpham` (`hsp_ma`, `hsp_tentaptin`, `sp_ma`) VALUES
+	(12, '20231003_163606_Elle_Jennie.jpg', 10),
+	(17, '20231003_163642_DeMen_phu2.jpg', 3),
+	(18, '20231003_163647_Gietconchimnhai.jpg', 4),
+	(19, '20231003_171341_Anh_em_nhà_Karamazov.jpg', 5),
+	(20, '20231003_171350_TamThe.jpg', 6),
+	(21, '20231003_171357_ho-so-bi-an.jpg', 7),
+	(22, '20231003_171408_CafeTony.jpg', 8),
+	(24, '20231003_171421_Triết_MÁc.jpg', 11),
+	(25, '20231003_171458_Khongthatbaih.jpg', 9);
 
 -- Dumping structure for table bookstore.hinhthucthanhtoan
 CREATE TABLE IF NOT EXISTS `hinhthucthanhtoan` (
@@ -56,7 +66,12 @@ CREATE TABLE IF NOT EXISTS `hinhthucthanhtoan` (
   PRIMARY KEY (`httt_ma`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table bookstore.hinhthucthanhtoan: ~4 rows (approximately)
+INSERT INTO `hinhthucthanhtoan` (`httt_ma`, `httt_ten`) VALUES
+	(1, 'Ship cod'),
+	(2, 'Chuyển khoản qua ngân hàng'),
+	(3, 'Mono'),
+	(4, 'ZaloPay');
 
 -- Dumping structure for table bookstore.khachhang
 CREATE TABLE IF NOT EXISTS `khachhang` (
@@ -73,7 +88,11 @@ CREATE TABLE IF NOT EXISTS `khachhang` (
   PRIMARY KEY (`kh_tendangnhap`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table bookstore.khachhang: ~3 rows (approximately)
+INSERT INTO `khachhang` (`kh_tendangnhap`, `kh_matkhau`, `kh_ten`, `kh_diachi`, `kh_dienthoai`, `kh_email`, `kh_cmnd`, `kh_makichhoat`, `kh_trangthai`, `kh_quantri`) VALUES
+	('a12345', '827ccb0eea8a706c4c34a16891f84e7b', 'Nguyễn Văn A', 'Hàn Quốc', '0159874236', 'an@gmail.com', NULL, NULL, 1, 0),
+	('admin', '202cb962ac59075b964b07152d234b70', 'admin', NULL, NULL, NULL, NULL, NULL, 1, 1),
+	('vi123', '202cb962ac59075b964b07152d234b70', 'Nguyễn Thị Tường Vi', 'Hậu Giang', '0145986327', 'vorentned@gmail.com', NULL, NULL, 1, 0);
 
 -- Dumping structure for table bookstore.loaisanpham
 CREATE TABLE IF NOT EXISTS `loaisanpham` (
@@ -83,7 +102,16 @@ CREATE TABLE IF NOT EXISTS `loaisanpham` (
   PRIMARY KEY (`lsp_ma`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table bookstore.loaisanpham: ~8 rows (approximately)
+INSERT INTO `loaisanpham` (`lsp_ma`, `lsp_ten`, `lsp_mota`) VALUES
+	(1, 'Tiểu thuyết', 'Cốt truyện cụ thể với nội dung và nhân vật'),
+	(2, 'Khoa học viễn tưởng', 'Mang yếu tố phi thực tế'),
+	(3, 'Kinh dị', 'Chứa đựng nhiều yếu tố tâm linh và rùng rợn'),
+	(4, 'Truyền cảm hứng', 'Chữa lành và định hướng con người'),
+	(5, 'Tự truyện', 'Viết về cuộc đời của chính tác giả'),
+	(6, 'Truyện ngắn', 'Bao gồm một câu chuyện nhỏ nhưng nội hàm đầy sâu s'),
+	(7, 'Chính trị', 'Bao gồm các sách pháp luật và chính trị'),
+	(8, 'Tạp chí', 'Đa dạng nội dung và nguồn gốc');
 
 -- Dumping structure for table bookstore.nhasanxuat
 CREATE TABLE IF NOT EXISTS `nhasanxuat` (
@@ -92,7 +120,17 @@ CREATE TABLE IF NOT EXISTS `nhasanxuat` (
   PRIMARY KEY (`nsx_ma`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table bookstore.nhasanxuat: ~9 rows (approximately)
+INSERT INTO `nhasanxuat` (`nsx_ma`, `nsx_ten`) VALUES
+	(1, 'NXB Trẻ'),
+	(2, 'NXB Kim Đồng'),
+	(3, 'NXB Chính trị Quốc gia Sự Thật'),
+	(4, 'NXB DK'),
+	(5, 'NXB HarperCollins'),
+	(6, 'NXB Templor Publishing'),
+	(7, 'Tạp chí ELLE'),
+	(8, 'Tạp chí VOGUE'),
+	(9, 'Tạp chí Harper\'s Bazaar');
 
 -- Dumping structure for table bookstore.sanpham
 CREATE TABLE IF NOT EXISTS `sanpham` (
@@ -112,7 +150,17 @@ CREATE TABLE IF NOT EXISTS `sanpham` (
   CONSTRAINT `FK_sanpham_nhasanxuat` FOREIGN KEY (`nsx_ma`) REFERENCES `nhasanxuat` (`nsx_ma`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table bookstore.sanpham: ~5 rows (approximately)
+INSERT INTO `sanpham` (`sp_ma`, `sp_ten`, `sp_gia`, `sp_giacu`, `sp_mota_ngan`, `sp_ngaycapnhat`, `sp_soluong`, `lsp_ma`, `nsx_ma`) VALUES
+	(3, 'Dế Mèn Phiêu Lưu Kí', 95000.00, 120000.00, ' <p>Tác phẩm tiêu biểu của nhà văn Tô Hoài</p>', '2023-09-28', 11, 6, 2),
+	(4, 'Giết con chim nhại', 150000.00, 199999.00, ' <p>Tiểu thuyết kinh điển của Harper Lee</p>', '2023-09-28', 3, 1, 5),
+	(5, 'Anh em nhà Karamazov', 80000.00, 145000.00, ' <p>Đời người ít nhất đọc 1 lần trong đời</p>', '2023-09-28', 4, 1, 6),
+	(6, 'Tam Thể', 45000.00, 88000.00, ' <p>Đỉnh cao thời đại</p>', '2023-09-28', 14, 2, 6),
+	(7, 'Hồ Sơ Bí Ẩn', 178000.00, 196000.00, ' <p>Khám phá chân tướng các vụ án trong quá khứ</p', '2023-09-28', 8, 3, 4),
+	(8, 'Cà phê cùng Tony', 56000.00, 78000.00, ' <p>Trải nghiệm cuộc sống hoàn toàn mới</p>', '2023-09-28', 26, 4, 1),
+	(9, 'Không bao giờ là thất bại, tất cả chỉ là thử thách', 110000.00, 145000.00, ' <p>Tự truyện kinh điển</p>', '2023-09-28', 2, 5, 4),
+	(10, 'Tạp chí ELLE tháng 9', 161000.00, 185000.00, ' <p>Ấn bản mới nhất của tòa báo nước Pháp</p>', '2023-09-28', 31, 8, 7),
+	(11, 'Triết học Mac_Lenin', 89000.00, 115000.00, ' <p>Phiên bản mới nhất</p>', '2023-09-28', 11, 7, 3);
 
 -- Dumping structure for table bookstore.sanphamdondathang
 CREATE TABLE IF NOT EXISTS `sanphamdondathang` (
@@ -126,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `sanphamdondathang` (
   CONSTRAINT `FK_sanpham-dondathang_sanpham` FOREIGN KEY (`sp_ma`) REFERENCES `sanpham` (`sp_ma`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporting was unselected.
+-- Dumping data for table bookstore.sanphamdondathang: ~0 rows (approximately)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
