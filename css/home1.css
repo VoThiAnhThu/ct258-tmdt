@@ -5,7 +5,7 @@
 }
 
 section {
-    height: 500px;
+    height: 600px;
 }
 .content {
     margin: 50px;
@@ -16,4 +16,13 @@ section {
     margin-bottom: 30px;
     font-weight: lighter;
     font-family: emoji;
+}
+
+.index-card {
+    min-height: 200px;
+    max-height: 450px;
+}
+
+.index-card-img {
+
 }
