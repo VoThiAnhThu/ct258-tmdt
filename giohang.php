@@ -22,14 +22,14 @@
         $giohang = $_SESSION['giohangData'];
     }
     ?>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h2>Giỏ hàng</h2>
+                <h2>Gio hang</h2>
                 <?php if(empty($giohang)): ?>
-                    <h5>Giỏ hàng của bạn đang rỗng</h5>
+                    <h3>Giỏ hàng rỗng</h3>
                     Vui lòng
-                    <a href="sanpham.php">Click vào đây</a> để mua sản phẩm.
+                    <a href="index.php">Click vào đây</a> để mua sản phẩm.
                 <?php else: ?>
                     <table class="table table-bordered">
                         <thead>
@@ -40,7 +40,6 @@
                                 <th>Số lượng</th>
                                 <th>Giá</th>
                                 <th>Thành tiền</th>
-                                <th>Xóa sản phẩm</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,12 +54,6 @@
                                     <td style="text-align:right;"><?= $sp['sp_dh_soluong'] ?></td>
                                     <td style="text-align:right;"><?= number_format($sp['sp_gia'], 0, ',', '.') ?></td>
                                     <td style="text-align:right;"> <?= number_format($sp['sp_gia'] * $sp['sp_dh_soluong'], 0, ',', '.') ?></td>
-                                    <td>
-                                        <a href="deletesp.php?data-sp_ma = <?=$sp['sp_ma']?>" class="btn btn-danger btnDelete" >
-                                            <i class="fa-solid fa-trash"></i>
-                                            Xóa
-                                        </a>
-                                    </td>
                                 </tr>
                                 <?php
                                 $stt++;
@@ -71,7 +64,7 @@
                         <tfoot>
                             <tr>
                                 <td></td>
-                                <td>TỔNG TIỀN:</td>
+                                <td>TỔNG THÀNH TIỀN:</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -80,7 +73,7 @@
 </tfoot>
                     </table>
                 <?php endif; ?>
-                <a href="sanpham.php" class="btn btn-outline-primary">Tiếp tục mua sắm</a>
+                <a href="index.php" class="btn btn-outline-primary">Tiếp tục mua sắm</a>
                 <a href="thanhtoan.php" class="btn btn-primary">Tiến hành thanh toán (checkout)</a>
             </div>
           
