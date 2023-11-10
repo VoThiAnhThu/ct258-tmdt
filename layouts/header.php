@@ -46,11 +46,16 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
+        <!--
         <a class="nav-link" href="/ct258-tmdt/chatbot.php">
-          <i style="font-size:24px; margin-left:30px; margin-right:3px" class="fa-solid fa-message"></i>
+          <i style="font-size:24px; margin-left:30px; margin-right:4px" class="fa-solid fa-message"></i>
           Hỗ trợ khách hàng
         </a>
+            -->
     </div>
   </div>
-  
+  <a class="nav-link" href="/ct258-tmdt/chatbot.php">
+          <i style="font-size:24px;" class="fa-solid fa-message"></i>
+          
+  </a>   
 </nav>
