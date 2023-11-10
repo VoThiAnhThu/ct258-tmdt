@@ -25,7 +25,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h2>Gio hang</h2>
+                <h2 style="margin:20px; font-size:35px; font-weight:bold;">GIỎ HÀNG</h2>
                 <?php if(empty($giohang)): ?>
                     <h3>Giỏ hàng rỗng</h3>
                     Vui lòng
@@ -54,6 +54,12 @@
                                     <td style="text-align:right;"><?= $sp['sp_dh_soluong'] ?></td>
                                     <td style="text-align:right;"><?= number_format($sp['sp_gia'], 0, ',', '.') ?></td>
                                     <td style="text-align:right;"> <?= number_format($sp['sp_gia'] * $sp['sp_dh_soluong'], 0, ',', '.') ?></td>
+                                    <td>
+                                            <a href="deletesp.php?sp_ma=<?=$sp['sp_ma']?>" class="btn btn-danger btnDelete" >
+                                                <i class="fa-solid fa-trash"></i>
+                                                Xóa
+                                            </a>
+                                        </td>
                                 </tr>
                                 <?php
                                 $stt++;
