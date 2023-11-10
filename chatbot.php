@@ -58,7 +58,8 @@
             <?php } ?>
             <div class="sticky">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-2"></div>
+                    <div style="margin-top:15px" class="col-md-8">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="msg"/>
                             <div class="input-group-append">
