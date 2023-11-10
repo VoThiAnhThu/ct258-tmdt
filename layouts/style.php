@@ -1,7 +1,7 @@
 <link rel="stylesheet"  href="/ct258-tmdt/assets/vendors/bootstrap-5.0.2-dist/css/bootstrap.min.css">
 <link rel="stylesheet"  href="/ct258-tmdt/assets/vendors/datatables/datatables.min.css">
 <link rel="stylesheet" href="/ct258-tmdt/assets/vendors/fontawesome-free-6.3.0-web/css/all.min.css">
-<link rel="stylesheet" href="/ct258-tmdt/css/chung.css">
+<link rel="stylesheet" href="/ct258-tmdt/css/chung1.css">
 <link rel="stylesheet" href="/ct258-tmdt/css/index.css">
 <link rel="stylesheet" href="/ct258-tmdt/css/home3.css">
 <link rel="stylesheet" href="/ct258-tmdt/css/sanpham2.css">
