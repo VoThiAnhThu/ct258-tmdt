@@ -37,7 +37,7 @@
 
 
         //Hiển thị sản phẩm
-        $mysqlSanPham = "SELECT sp.sp_ten, sp.sp_gia, sp.sp_giacu, sp.sp_mota_ngan, lsp.lsp_ten, MAX(hsp.hsp_tentaptin) AS hsp_tentaptin
+        $mysqlSanPham = "SELECT sp.sp_ma,sp.sp_ten, sp.sp_gia, sp.sp_giacu, sp.sp_mota_ngan, lsp.lsp_ten, MAX(hsp.hsp_tentaptin) AS hsp_tentaptin
                         FROM sanpham sp
                         JOIN loaisanpham lsp ON sp.lsp_ma = lsp.lsp_ma
                         LEFT JOIN hinhsanpham hsp ON hsp.sp_ma = sp.sp_ma
@@ -50,7 +50,7 @@
         $dataSanPham = [];
         while($row = mysqli_fetch_array($reusltSanPham, MYSQLI_ASSOC)) {
             $dataSanPham[] = array(
-                
+                'sp_ma' =>$row['sp_ma'],
                 'sp_ten' => $row['sp_ten'],
                 'sp_gia' => $row['sp_gia'],
                 'sp_giacu' => $row['sp_giacu'],
@@ -64,9 +64,9 @@
     <!--Start Main-->
         <div class="container">
             <?php foreach($dataLoaiSP as $lsp): ?>
-                <h3><?=$lsp['lsp_ten']?></h3>
+                <h3 class="lsp_title"><?=$lsp['lsp_ten']?></h3>
             <?php endforeach; ?>
-            <div class="row">
+            <div class="lsp_content row">
                 <?php foreach($dataSanPham as $sp): ?>
                     <div class="col-md-3">
                     <div class="sp-item card">
@@ -91,12 +91,13 @@
                                     <br>
                                     <b><?=number_format( $sp['sp_gia'],0,'.',',') ?></b>
                                 </p>
-                                <a href="chitietsanpham.php?sp_ma=<?=$sp['sp_ma'] ?>" class="btn btn-primary">Chi tiết</a>
+                                <a href="chitietsanpham.php?sp_ma=<?=$sp['sp_ma'] ?>" class="btn btn-primary btnChiTiet ">Chi tiết sản phẩm</a>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
+            <a href="sanpham.php" class="btn btn-primary btnChiTiet btn_step">Quay về</a>
         </div>
     <!--Start Footer-->
     <?php
