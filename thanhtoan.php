@@ -44,7 +44,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2>Thông Tin Khách Hàng</h2>
+                    <h2 style="margin:20px; font-size:35px; font-weight:bold;">Thông Tin Khách Hàng</h2>
                     <div>
                         <label for="">Họ và tên:</label>
                         <input type="text" name="kh_ten" class="form-control">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <h2>Giỏ hàng</h2>
+                    <h2 style="margin:20px; font-size:35px; font-weight:bold;">Giỏ hàng</h2>
                     <?php if(empty($giohang)): ?>
                         <h5>Giỏ hàng của bạn đang rỗng</h5>
                         Vui lòng
@@ -124,15 +124,34 @@
                 </div>
             </div>
         </div>
+        <div style="    padding-left: 75px; padding-top: 20px;">
+            <a href="index.php" class="btn" style="background:palevioletred; color:antiquewhite" >Quay Về</a>
+            <button name="btnLuu" class="btn" style="background:palevioletred; color:antiquewhite">Xác Nhận</button>
+        </div>
     </form>
 
    
+
     <?php
     include_once __DIR__ . '/layouts/footer.php';
     ?>
     <?php
     include_once __DIR__ . '/layouts/script.php';
     ?>
+    <?php
+        if(isset($_POST['btnLuu'])) {
+            $kh_ten = $_POST['kh_ten'];
+            $kh_diachi = $_POST['kh_diachi'];
+            $kh_sdt = $_POST['kh_sdt'];
+            $httt_ma = $_POST['httt_ma'];
 
+            $sqlInsert ="INSERT INTO hoadon
+                        (hd_tenkh, hd_diachi, hd_sdt,hd_hinhthucthanhtoan)
+                        VALUES ('$kh_ten', '$kh_diachi', '$kh_sdt', '$httt_ma')";
+
+            mysqli_query($conn,$sqlInsert);
+        }
+
+    ?>
 </body>
 </html>
