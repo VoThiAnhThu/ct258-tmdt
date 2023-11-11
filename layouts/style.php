@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/ct258-tmdt/css/dangnhap1.css">
 <link rel="stylesheet" href="/ct258-tmdt/css/dangki.css">
 <link rel="stylesheet" href="/ct258-tmdt/css/chitietsp.css">
-<link rel="stylesheet" href="/ct258-tmdt/css/footer.css">
+<link rel="stylesheet" href="/ct258-tmdt/css/footer1.css">
 <style>
     .error {
         color: red;
