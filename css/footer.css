@@ -3,7 +3,7 @@ footer {
     padding: 15px;
     display: flex;
     justify-content: space-around;
-    background-color:#050f20f5 ;
+    background: palevioletred;
 
 }
 
@@ -12,13 +12,13 @@ footer {
 }
 
 .footer-title {
-    color: #c9c907;
+    color: antiquewhite;
     font-size: 20px;
     margin-bottom: 10px;
 }
 
 .footer-icon {
-    color: #c9c907;
+    color: antiquewhite;
     font-size: 20px;
     padding: 3px;
 }
